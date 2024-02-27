@@ -4,7 +4,7 @@ print('Output: value, if the vector has ariphmetic progression, it`s difference 
 
 
 arr = [i for i in range(1, 20, 3)]
-arr.append(5)
+arr[3] = 5
 print('input: ', arr)
 
 
@@ -18,4 +18,37 @@ def p(i):
     else:
         return 'Not an ariphmetic progression'
 
-print(p(0))
+print('Difference in the ariphmetic progression:', p(0))
+
+
+
+# n=3
+
+# stack1, stack2, stack3 = [i for i in range(1, n+1)], [], []
+
+# def hannoy(stack1, stack2, stack3, n):
+#     tower_m = stack1[:n-1]
+#     if(stack1 == []):
+#         return stack1
+#     stack1 = stack1[n-1]
+    
+#     stack2.extend(hannoy(tower_m, stack2, stack3, n-1))
+#     stack3.append(stack1)
+#     stack1 = []
+#     stack3.extend(stack2[:n-1])
+#     stack2 = stack2[n-1:]
+    
+#     print(stack1)
+#     print(stack2)
+#     print(stack3)
+
+#     res1 = stack1
+#     stack1 = stack3
+#     stack3 = res1
+
+#     return stack1
+
+
+
+# print(hannoy(stack1, stack2, stack3, n))
+

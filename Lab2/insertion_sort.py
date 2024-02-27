@@ -5,6 +5,8 @@ def insertion_sort(arr, return_complexcity = False):
     for i in range(len(arr)):
         key = arr[i]
         j=i-1
+        
+        comparisons += 1
         while j >= 0 and key < arr[j]: # shifting the array
             comparisons += 1
             swaps += 1
