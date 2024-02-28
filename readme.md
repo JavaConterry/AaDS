@@ -1,4 +1,4 @@
 # Algorithms and Data Structures
 
-- [ ] Lab 1
-- [ ] Lab 2
+- [x] Lab1 - Recursions
+- [x] Lab2 - Sorting
