@@ -51,6 +51,7 @@ class BiLinkedList:    #     head -> .... -> tail
     
     def add(self, index, e):
         if(index < 0):
+            print('Invalid index')
             return
         if(index == 0):
             self.addFirst(e)
@@ -79,6 +80,7 @@ class BiLinkedList:    #     head -> .... -> tail
     
     def takeFirst(self):
         if(self.length==0):
+            print('Empty data')
             return
         val = self.head.value
         self.head = self.head.next
@@ -88,6 +90,7 @@ class BiLinkedList:    #     head -> .... -> tail
 
     def takeLast(self):
         if(self.length==0):
+            print('Empty data')
             return
         val = self.tail.value
         current = self.head
@@ -102,8 +105,10 @@ class BiLinkedList:    #     head -> .... -> tail
     
     def remove(self, index):
         if(self.length==0):
+            print('Empty data')
             return
         if(index>=self.length):
+            print('Index out of range')
             return self.takeLast()
 
         current = self.head
@@ -120,8 +125,10 @@ class BiLinkedList:    #     head -> .... -> tail
     
     def set(self, e, index):
         if(self.length==0):
+            print('Empty data')
             return
         if(index>self.length):
+            print('Warning: Index is out of range, value was added to the tail')
             self.addLast(Node(e))
 
         current = self.head
@@ -132,6 +139,7 @@ class BiLinkedList:    #     head -> .... -> tail
     
     def get(self, index):
         if(index > self.length):
+            print('Index out of range')
             return
         current = self.head
         while(index-1>0):
