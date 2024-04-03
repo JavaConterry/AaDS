@@ -1,4 +1,3 @@
-from words import word_list
 from LinkedList import BiLinkedList
 
 
@@ -24,6 +23,8 @@ def read_input_text():
 
 input_data = read_input_text()
 
+
+# Using Bilinked List
 list_data = BiLinkedList()
 list_data.read(input_data)
 
@@ -35,24 +36,43 @@ for i in range(97, 122):
     word += chr(i)
     alphabet_list.addLast(word)
 
-
-# def word_begins_like_alphabet(word, alphabet):
-#     while(word != word[0]):
-#         if(alphabet.has(word)):
-#             return True
-#         word = word[:-1]
-#     return False
-
 first_word = list_data.get(0)
 for i in range(1, list_data.length+1):
     word = list_data.get(i)
     if(alphabet_list.has(word) and word!=first_word):
         result_list.addLast(word)
-print('Alphabetical words which do not coincide with the first:', result_list)
+print('\nAlphabetical words which do not coincide with the first:', result_list)
 
 count_odd = 0
 for i in range(1, list_data.length+1):
     word = list_data.get(i)
+    if(len(word) %2==1): count_odd+=1
+
+print('Count of words with odd length:', count_odd)
+
+# Using Arrays
+array_data = input_data[:-1].split(' ')
+
+alphabet_array = []
+alpha_word=''
+for i in range(97, 122): 
+    alpha_word += chr(i)
+    alphabet_array.append(alpha_word)
+    
+def is_consisted(word, words):
+    for i in words:
+        if(word == i):
+            return True
+    return False
+result_array = []
+for word in array_data:
+    if(is_consisted(word, alphabet_array) and word!=array_data[0]):
+        result_array.append(word)
+
+print('\nAlphabetical words which do not coincide with the first:', result_array)
+
+count_odd = 0
+for word in array_data:
     if(len(word) %2==1): count_odd+=1
 
 print('Count of words with odd length:', count_odd)
