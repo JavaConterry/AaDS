@@ -71,11 +71,12 @@ class BiLinkedList:    #     head -> .... -> tail
     
     def __str__(self):
         output = ""
-        current = self.head
-        output += str(current.value)
-        while(current.hasNext()):
-            current = current.next
-            output += " "+str(current.value)
+        if(self.length != 0):
+            current = self.head
+            output += str(current.value)
+            while(current.hasNext()):
+                current = current.next
+                output += " "+str(current.value)
         return output
     
     def takeFirst(self):
@@ -155,3 +156,9 @@ class BiLinkedList:    #     head -> .... -> tail
             else:
                 self.addLast(addtext)
                 addtext = ''
+
+    def has(self, word):
+        for i in range(self.length):
+            if(self.get(i) == word):
+                return True
+        return False
