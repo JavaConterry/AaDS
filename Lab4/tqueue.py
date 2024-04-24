@@ -31,3 +31,27 @@ class Queue_Array:
     
     def __str__(self):
         return str(self.set)    
+
+
+class CircledQueueArray:
+    def __init__(self, length=10, head_index=0, tail_index=0):
+        self.set = ["#"]*length
+        self.head=head_index
+        self.tail=tail_index
+
+    def add(self, value):
+        if(self.tail==self.head):
+            print('Queue already full')
+            return
+        self.set[self.tail]=value
+        self.tail+=1
+    
+    def get(self):
+        val = self.set[self.head]
+        self.set[self.head]='#'
+        self.head+=1
+        return val
+    
+    def __str__(self):
+        return str(self.set)    
+
