@@ -34,10 +34,11 @@ class Queue_Array:
 
 
 class CircledQueueArray:
-    def __init__(self, length=10, head_index=0, tail_index=0):
+    def __init__(self, length=10, head_index=0):
+        self.length = length
         self.set = ["#"]*length
         self.head=head_index
-        self.tail=tail_index
+        self.tail=head_index
 
     def add(self, value):
         if(self.tail==self.head and self.set[self.tail]!='#'):
@@ -45,11 +46,15 @@ class CircledQueueArray:
             return
         self.set[self.tail]=value
         self.tail+=1
+        if(self.tail>=len(self.set)):
+            self.tail = self.tail % self.tail
     
     def get(self):
         val = self.set[self.head]
         self.set[self.head]='#'
         self.head+=1
+        if(self.head>=len(self.set)):
+            self.head = self.head % self.length
         return val
     
     def __str__(self):

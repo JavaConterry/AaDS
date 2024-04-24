@@ -30,19 +30,4 @@ class Stack_Array:
     
     def __str__(self):
         return str(self.set)    
-    
-
-# class Queue_Array:
-#     def __init__(self):
-#         self.set = []
-
-#     def add(self, value):
-#         self.set.append(value)
-    
-#     def get(self):
-#         val = self.set[0]
-#         self.set.remove(val)
-#         return val
-    
-#     def __str__(self):
-#         return str(self.set)    
+        
