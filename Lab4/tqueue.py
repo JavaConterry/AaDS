@@ -40,7 +40,7 @@ class CircledQueueArray:
         self.tail=tail_index
 
     def add(self, value):
-        if(self.tail==self.head):
+        if(self.tail==self.head and self.set[self.tail]!='#'):
             print('Queue already full')
             return
         self.set[self.tail]=value
